@@ -1,20 +1,19 @@
 # Project Aura: State Manifest
-- **Manifest Version:** 1.0
+- **Manifest Version:** 1.1
 - **Project Version:** 0.1.0
-- **Last Updated:** 2025-06-27T11:18:42+04:00
+- **Last Updated:** 2025-06-27T11:58:34+04:00
 
 ---
 
 ## 1. Session Summary & Objective
 
 **Last Session Summary:**
-- We established the need for a production-first, iterative development approach.
-- We agreed on a comprehensive documentation structure to act as our project blueprint.
-- We defined the core principles: Modularity, leveraging open-source, and the Model Context Protocol (MCP).
-- We outlined a full MLOps strategy including version control (Git, DVC), CI/CD (GitHub Actions), and monitoring (Evidently AI).
+- We established a two-phase approach for `Module-001`. Phase 1 will be a Zero-Shot classifier to establish a baseline. Phase 2 will be a fully fine-tuned model for production.
+- We researched available `CLIP` models and selected `openai/clip-vit-large-patch14` as our base model for its strong performance and documentation.
+- We defined and approved a detailed technical plan for implementing the Phase 1 Zero-Shot Classifier, including the core logic and API structure using FastAPI.
 
 **Current Objective:**
-- To research, select, and document the base model for **Module-001: Ceremony Classification**.
+- **Code Implementation:** To write the `classifier.py` and `main.py` scripts for the **Module-001 (Phase 1 - Zero-Shot Classifier)** as per the approved technical plan.
 
 ---
 
@@ -34,17 +33,19 @@
 ### 2.3. Module Status
 
 #### Module-001: Ceremony Classification
-- **Status:** `Pending Initiation`
+- **Status:** `Phase 1 - In Progress`
 - **Purpose:** Classifies an image into a specific wedding ritual.
-- **Base Model:** `Not Selected`
-- **Fine-tuned Version:** `N/A`
-- **Dataset Used:** `N/A`
+- **Base Model:** `openai/clip-vit-large-patch14`
+- **Fine-tuned Version:** `N/A` (Scheduled for Phase 2)
+- **Dataset Used:** `N/A` (Data scraping and labeling for Phase 2 is a parallel task)
 
 ---
 
 ## 3. Decision Log
 
-| Date       | Decision                                                                 | Rationale                                                                        |
-| :--------- | :----------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
-| 2025-06-27 | Adopted the "Project State Manifest" approach for context persistence.   | To ensure project continuity and resilience against loss of chat history.        |
-| 2025-06-27 | Finalized v1.0 of the master technical documentation structure.          | To provide a clear, production-focused blueprint for the project.                |
+| Date       | Decision                                                                          | Rationale                                                                                                    |
+| :--------- | :-------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| 2025-06-27 | Approved technical plan for Module-001 (Phase 1).                                 | The plan is technically sound, uses appropriate libraries, and provides a clear path to the first working module. |
+| 2025-06-27 | Selected `openai/clip-vit-large-patch14` as the base model for Ceremony Classification. | Strong performance, good documentation, and ideal for both zero-shot baseline and future fine-tuning.          |
+| 2025-06-27 | Adopted the "Project State Manifest" approach for context persistence.            | To ensure project continuity and resilience against loss of chat history.                                    |
+| 2025-06-27 | Finalized v1.0 of the master technical documentation structure.                   | To provide a clear, production-focused blueprint for the project.                                            |
